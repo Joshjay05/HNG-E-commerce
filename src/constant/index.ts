@@ -235,11 +235,11 @@ import round from '../assets/round.png'
 import shade from "../assets/shade.png"
 import vintage from '../assets/vintage.png'
 
-import { StaticImageData } from 'next/image';
+// import { StaticImageData } from 'next/image';
 
 export interface ProductCardProps {
   id: number;
-  imageUrl: string | StaticImageData;
+  imageUrl: string ;
   title: string;
   price: string;
   // rating: number;
@@ -250,7 +250,7 @@ export interface ProductCardProps {
 
 export interface CardProps {
   id: number;
-  imageUrl: string | StaticImageData;
+  imageUrl: string ;
   title: string;
   price: string;
 }

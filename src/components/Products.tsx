@@ -13,9 +13,9 @@ const Products: React.FC = () => {
           imageUrl={product.imageUrl}
           title={product.title}
           price={product.price}
-          rating={product.rating}
-          reviews={product.reviews}
-          label={product.label}
+          // rating={product.rating}
+          // reviews={product.reviews}
+          // label={product.label}
         />
       ))}
     </div>
