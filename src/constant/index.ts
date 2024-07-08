@@ -256,7 +256,7 @@ export interface CardProps {
 }
 
 
-  export const BestsellerCategories: CardProps [] =[
+  export const bestSeller: CardProps [] =[
     {
       id: 1,
       imageUrl: black,
@@ -267,13 +267,13 @@ export interface CardProps {
         id: 2,
         imageUrl: right,
         title: 'H&M T-shirt',
-         price:'$150'
+         price:'150'
       },
       {
         id: 3,
         imageUrl: Jean,
         title: 'H&M T-shirt',
-        price:'$150'
+        price:'150'
       },
     //   {
     //     id: 4,
@@ -302,27 +302,27 @@ export interface CardProps {
     {
       id: 1,
       imageUrl: vintage,
-      title: 'HAND-MADE TURKEY CASUAL',
-   price:'$150'
+      title: 'H&M T-shirt',
+   price:'150'
   
     },
     {
       id: 2,
       imageUrl: round,
-      title: 'PEACH SILK BLOUSE',
-     price:'$150'
+      title: 'H&M T-shirt',
+     price:'150'
     },
     {
       id: 3,
       imageUrl: right,
-      title: 'VINTAGE HANDMADE BLOUSE',
-     price:'$150'
+      title: 'H&M T-shirt',
+     price:'150'
     },
     {
       id: 4,
       imageUrl: shade,
-      title: 'unisex T-Shirt',
-     price:'$150'
+      title: 'H&M T-shirt',
+     price:'150'
     },
 
 
