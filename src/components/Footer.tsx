@@ -15,7 +15,7 @@ const Footer = () => {
             </ul>
             </div>
 
-            <div className="flex justify-center gap-20 lg:text-[24px] py-6">
+            <div className="flex justify-center gap-[3rem] lg:text-[24px] py-6">
 <p>Terms & conditions</p>
 <p>Contact Us</p>
 
