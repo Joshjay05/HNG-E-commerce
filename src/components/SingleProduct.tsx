@@ -1,22 +1,26 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useCart } from '../constant/CartContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../constant/Store';
+import { addToCart } from '../constant/CartSlice';
 
 const ProductDetails: React.FC = () => {
-    const { id = '' } = useParams<{ id: string }>();
-  const { state, dispatch } = useCart();
+  const { id } = useParams<{ id: string }>();
+  const productId = parseInt(id ?? "", 10);
+  const dispatch = useDispatch();
 
-  // Type guard to ensure id is a valid integer
-  const productId = parseInt(id);
+  // Select product from either products or bestSeller arrays
+  const product = useSelector((state: RootState) =>
+    state.products.products.find((p) => p.id === productId) ||
+    state.products.bestSeller.find((p) => p.id === productId)
+  );
+
   if (isNaN(productId)) return <div>Invalid product ID</div>;
-
-  const product = state.cart.find(p => p.id === productId);
-
   if (!product) return <div>Product not found</div>;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const addToCart = (product: any) => {
-    dispatch({ type: 'ADD_TO_CART', product });
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+    console.log('Added to cart');
   };
 
   return (
@@ -25,7 +29,7 @@ const ProductDetails: React.FC = () => {
       <h1 className="text-2xl font-bold">{product.title}</h1>
       <p className="text-xl font-semibold">${product.price.toLocaleString()}</p>
       <div>
-        <button onClick={() => addToCart(product)} className="bg-blue-500 text-white py-2 px-4 rounded">Add to Cart</button>
+        <button onClick={handleAddToCart} className="bg-blue text-white py-2 px-4 rounded">Add to Cart</button>
       </div>
     </div>
   );

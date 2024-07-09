@@ -1,20 +1,31 @@
-import { configureStore } from '@reduxjs/toolkit';
-import cartReducer, { CartState } from '../constant/CartSlice'
-import wishlistReducer from '../constant/WishSlice';
-// import CartState 
+// import { configureStore } from '@reduxjs/toolkit';
+// import productsReducer from '../constant/ProductSlice';
+// import cartReducer from '../constant/CartSlice';
+// import wishlistReducer from './WishSlice';
 
-const store = configureStore({
+// const store = configureStore({
+//   reducer: {
+//     products: productsReducer,
+//     cart: cartReducer,
+//     wishlist: wishlistReducer,
+//   },
+// });
+
+// export type RootState = ReturnType<typeof store.getState>;
+// export type AppDispatch = typeof store.dispatch;
+import { configureStore } from '@reduxjs/toolkit';
+import productsReducer from '../constant/ProductSlice';
+import cartReducer from '../constant/CartSlice';
+import wishlistReducer from './WishSlice';
+
+const reduxStore = configureStore({
   reducer: {
+    products: productsReducer,
     cart: cartReducer,
     wishlist: wishlistReducer,
   },
 });
 
-export type RootState = {
-  wishlist: [];
-  cart: CartState; // Use the CartState type directly here
-  // Add other types as needed
-};
-export type AppDispatch = typeof store.dispatch;
-
-export default store;
+export type RootState = ReturnType<typeof reduxStore.getState>;
+export type AppDispatch = typeof reduxStore.dispatch;
+export default reduxStore;
