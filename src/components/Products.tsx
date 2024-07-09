@@ -66,6 +66,19 @@ const Products: React.FC = () => {
           />
         ))}
       </div>
+      <div className="my-10 px-[4%] lg:flex justify-center md:grid md:grid-cols-2 sm:flex sm:flex-col sm:gap-4 lg:gap-3 items-center">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            imageUrl={product.imageUrl}
+            title={product.title}
+            price={product.price}
+            addToCart={() => handleAddToCart(product)}
+            addToWishlist={() => handleAddToWishlist(product)}
+          />
+        ))}
+      </div>
     </section>
   );
 };
