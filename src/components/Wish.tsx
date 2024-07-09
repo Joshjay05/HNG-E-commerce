@@ -19,8 +19,8 @@ const WishlistPage: React.FC = () => {
     const dispatch = useDispatch();
 
   return (
-    <div className="p-4 mt-4 mb-40">
-      <h1 className="text-2xl font-bold py-8">Wishlist</h1>
+    <div className="p-4 mt-4 mb-[18rem]">
+      <h1 className="text-2xl font-bold pt-10 pb-20">Wishlist</h1>
       {wishlistItems.map((product: Product) => (
         <div key={product.id} className="flex justify-between items-center p-4 border-b">
           <img src={product.imageUrl} alt={product.title} className="w-16 h-16" />

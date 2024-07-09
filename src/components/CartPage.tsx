@@ -54,7 +54,7 @@ const CartPage: React.FC = () => {
   };
 
   if (cart.length === 0) {
-    return <div className="p-4">Cart is empty</div>;
+    return <div className="p-4 my-[14rem] mx-auto text-[32px] font-bold">Cart is empty</div>;
   }
 
   return (
