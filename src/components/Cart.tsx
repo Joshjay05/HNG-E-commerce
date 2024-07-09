@@ -4,13 +4,13 @@ import { useCart } from '../constant/CartContext';
 import { Link } from 'react-router-dom';
 
 interface Product {
-    id: number;
-    imageUrl: string;
-    title: string;
-    price: number ;
-  }
-  
-const CartPage: React.FC = () => {
+  id: number;
+  imageUrl: string;
+  title: string;
+  price: number;
+}
+
+const Cart: React.FC = () => {
   const { state, dispatch } = useCart();
 
   const removeFromCart = (product: Product) => {
@@ -30,9 +30,9 @@ const CartPage: React.FC = () => {
           <button onClick={() => removeFromCart(product)} className="bg-red-500 text-white py-2 px-4 rounded">Remove</button>
         </div>
       ))}
-      <Link to="/checkout" className="bg-green-500 text-white py-2 px-4 rounded">Proceed to Checkout</Link>
+      <Link to="/checkout" className="bg-green text-white py-2 px-4 rounded">Proceed to Checkout</Link>
     </div>
   );
 };
 
-export default CartPage;
+export default Cart;

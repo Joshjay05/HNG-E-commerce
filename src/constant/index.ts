@@ -59,6 +59,13 @@ export const products: ProductCardProps[] = [
   },
   {
     id: 3,
+    imageUrl: right,
+    title: 'H&M T-shirt',
+    price: 150,
+  },
+
+  {
+    id: 4,
     imageUrl: shade,
     title: 'H&M T-shirt',
     price: 150,

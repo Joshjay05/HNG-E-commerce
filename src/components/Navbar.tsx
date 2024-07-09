@@ -4,6 +4,7 @@ import logo from '../assets/MenWears.png'
 import { useState } from "react"
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from "react-router-dom";
 // import Image from "next/image"
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -22,12 +23,12 @@ const Navbar = () => {
 <div>
             <input placeholder="search" type="text" className="border-[1.5px] rounded-3xl w-[350px] h-[30px] p-2 bg-transparent border-white"/>
           </div>
-            <ul className="flex justify-evenly items-center  gap-8 text-white text-[24px]">
-<li className="bg-[#F5FF32] font-bold text-black border rounded-lg px-1 text-xl">
+            <ul className="flex justify-evenly items-center  gap-8 text-white text-[24px] cursor-pointer">
+<li className="bg-[#F5FF32] font-bold text-black cursor-pointer border rounded-lg px-1 text-xl">
    Shop 
 </li>
-<li>Wishlist</li>
-<li className="flex gap-1 items-center">Cart <BiCart/></li>
+<Link to='/wishlist' className="cursor-pointer">Wishlist</Link>
+<Link to="/cart" className="flex gap-1 items-center cursor-pointer">Cart <BiCart/></Link>
 <li>Profile</li>
             </ul>
 </article>

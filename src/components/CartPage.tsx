@@ -25,7 +25,7 @@ const CartPage: React.FC = () => {
           <button onClick={() => handleRemoveFromCart(product.id)} className="bg-red-500 text-white py-2 px-4 rounded">Remove</button>
         </div>
       ))}
-      <Link to="/checkout" className="bg-green-500 text-white py-2 px-4 rounded">Proceed to Checkout</Link>
+      <Link to="/checkout" className="bg-green text-white py-2 px-4 rounded">Proceed to Checkout</Link>
     </div>
   );
 };

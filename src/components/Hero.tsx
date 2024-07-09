@@ -13,7 +13,7 @@ const Hero = () => {
 
 <p className='leading-[3rem] mb-4 py-1 lg:max-w-[70%] text-justify tracking-wide'>Explore our curated selection of stylish clothing and accessories, from tailored suits and dress shirts to casual jeans and trendy streetwear. Complete your look with premium watches, belts, and footwear. Discover quality pieces that reflect your personality and enhance your confidence.</p>
 
-<a href="/" className='bg-[#F5FF32] font-bold text-black border rounded-lg p-2 text-xl'>Shop Now !</a>
+<a href="/" className='bg-[#F5FF32] font-bold text-black border rounded-lg p-2 text-xl cursor-pointer'>Shop Now !</a>
     </article>
 
     <article className='lg:ml-[4rem] '>
