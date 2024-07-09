@@ -59,7 +59,7 @@ const CartPage: React.FC = () => {
 
   return (
     <>
-      <h1 className="text-3xl font-bold my-[50px] ml-7 m">Cart</h1>
+      <h1 className="text-3xl font-bold mt-[80px] ml-7 m">Cart</h1>
     <section className="lg:p-4 p-2 lg:grid lg:grid-cols-2 gap-4">
       {cart.map(product => (
         <article key={`${product.id}-${product.size}`} className="flex md:grid md:grid-cols-2 md:gap-12 lg:grid lg:grid-cols-2 items-center md: lg:p-4 md:p-[34px] p-2 border border-gray mb-2 gap-1">
@@ -74,9 +74,9 @@ const CartPage: React.FC = () => {
       </article>
           <div className="flex flex-col gap-8 sm:gap-3">
             <div>
-            <div className='flex lg:gap-[37px] md:gap-6 py-2'>
+            <div className='flex lg:gap-[37px] md:gap-6 sm:gap-1 py-1'>
         <label>Size:</label>
-        <select value={size} onChange={(e) => setSize(e.target.value)}>
+        <select value={size} onChange={(e) => setSize(e.target.value)} className='border rounded-md  smp-[1px]'>
           <option value="S">S</option>
           <option value="M">M</option>
           <option value="L">L</option>
@@ -86,9 +86,9 @@ const CartPage: React.FC = () => {
       
       
       <div className='flex items-center lg:gap-3 gap-[3px] md:gap-2 my-4 sm:my-1'>
-      <label>Quantity:</label>
-              <button  className='lg:text-[22px] bg-black  text-white font-light' onClick={() => handleUpdateQuantity(product.id, product.size, product.quantity > 1 ? product.quantity - 1 : 1)}><BiMinus/></button>
-              <span>{product.quantity}</span>
+      <label>Qty:</label>
+              <button  className='lg:text-[22px] md:text-[24px] bg-black  text-white font-light' onClick={() => handleUpdateQuantity(product.id, product.size, product.quantity > 1 ? product.quantity - 1 : 1)}><BiMinus/></button>
+              <span className='text-[20px]'>{product.quantity}</span>
               <button  className='lg:text-[22px] bg-black  text-white font-light' onClick={() => handleUpdateQuantity(product.id, product.size, product.quantity + 1)}><BiPlus/></button>
             </div>
       </div>
@@ -101,9 +101,9 @@ const CartPage: React.FC = () => {
       
     </section>
       <div className="flex md:flex-col sm:flex-col justify-center items-center my-6 lg:gap-20 gap-6">
-      <Link to="/checkout" className="bg-black text-white py-2 px-4 rounded">Proceed to Checkout</Link>
+      <Link to="/" className="bg-[#F5FF32] font-bold text-black py-2 px-4 rounded ml-4 text-[24px]">Continue Shopping</Link>
+      <Link to="/checkout" className="bg-black text-white py-2 px-[4.5rem] ml-4 rounded text-[24px]"> Check-Out</Link>
 
-      <Link to="/" className="bg-black text-white py-2 px-4 rounded ml-4">Continue Shopping</Link>
       </div>
     </>
   );

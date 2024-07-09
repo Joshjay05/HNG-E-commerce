@@ -15,10 +15,12 @@ const Navbar = () => {
 
   return (
     <div >
-        <nav className="fixed w-full flex lg:justify-around gap-20 z-30 bg-black  items-center justify-around py-4 h-[6vh]">
+        <nav className="fixed w-full flex lg:justify-around gap-20 z-30 bg-black  items-center justify-around py-6 h-[6vh] px-2">
 
-
-          <img src={logo} alt="logo cl" className="sm:w-[30%]"/>
+<Link to='/' className="">
+<img src={logo} alt="logo cl" className="sm:w-[50%]"/>
+</Link>
+         
 <article className=" hidden lg:flex flex-row gap-20 items-center">
 <div>
             <input placeholder="search" type="text" className="border-[1.5px] rounded-3xl w-[350px] h-[30px] p-2 bg-transparent border-white"/>
@@ -47,15 +49,16 @@ const Navbar = () => {
 			<article
 				className={
 					showMenu
-						? "flex flex-col justify-center px-8 fixed top-[3rem] bg-slate-100  transition-all duration-500 z-30 h-full w-full "
+						? "flex flex-col justify-center px-8 fixed top-[4.2rem] bg-slate-100  transition-all duration-500 z-30 h-full w-full "
 						: "hidden"}>
-				<ul className="flex flex-col gap-5">
-				<li className="bg-[#F5FF32] w-[20vw] font-bold text-black border rounded-lg px-1 text-xl">
+				<ul className="flex flex-col gap-5" >
+				<li className="bg-[#F5FF32] w-[20vw] font-bold text-black border rounded-lg px-1 text-xl" onClick={toggleMenu}>
    Shop 
 </li>
-<li>Wishlist</li>
-<li className="flex gap-1 items-center">Cart <BiCart/></li>
-<li>Profile</li>
+<Link to='/wishlist' className="cursor-pointer" onClick={toggleMenu}>Wishlist</Link>
+<Link to="/cart" className="flex gap-1 items-center cursor-pointer" onClick={toggleMenu}>Cart <BiCart/></Link>
+<li onClick={toggleMenu}>Profile</li>
+            {/* </ul> */}
 				</ul>
 			</article>
 
