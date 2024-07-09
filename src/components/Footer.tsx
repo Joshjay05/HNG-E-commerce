@@ -7,9 +7,12 @@ const Footer = () => {
     <footer className="bg-[#282828] text-white p-6">
         <div>
 <ul className="flex justify-evenly items-center gap-4  lg:gap-8 text-white lg:text-[24px] flex-wrap">
+    <Link to='/'>
+
 <li className="bg-[#F5FF32] font-bold text-black border rounded-lg px-1 text-xl">
    Shop 
 </li>
+</Link>
 <Link to='/wishlist' className="cursor-pointer" >Wishlist</Link>
 <Link to="/cart" className="flex gap-1 items-center cursor-pointer" >Cart <BiCart/></Link>
 <li >Profile</li>
