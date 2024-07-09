@@ -6,8 +6,7 @@ import Navbar from "./components/Navbar"
 
 const Layout = () => {
   return (
-    <div className="flex flex-col gap-6">
-
+    <div className=" overflow-x-hidden">
         <Navbar/>
         <Outlet/>
         <Footer/>
