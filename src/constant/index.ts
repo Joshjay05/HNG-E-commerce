@@ -14,7 +14,7 @@ export interface ProductCardProps {
   addToWishlist?: (id: number) => void;
 }
 
-export interface CardProps {
+export interface BestCardProps {
   id: number;
   imageUrl: string;
   title: string;
@@ -23,7 +23,7 @@ export interface CardProps {
   addToWishlist?: (id: number) => void;
 }
 
-export const bestSeller: CardProps[] = [
+export const bestSeller: BestCardProps[] = [
   {
     id: 1,
     imageUrl: black,

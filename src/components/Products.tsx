@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { ProductCardProps } from '../constant/index';
+import { ProductCardProps,BestCardProps } from '../constant/index';
 import ProductCard from '../Reuseable/ProductCard';
 import { useSelector } from 'react-redux';
 import { RootState } from '../constant/Store';
@@ -20,11 +20,13 @@ const Products: React.FC = () => {
     dispatch(addToWishlist(product));
   };
 
+  
+
   return (
     <section>
       <h1 className="text-2xl font-bold mb-4 mx-auto bg-[#282828] text-white text-center text-[40px] p-4">Best Sellers</h1>
       <div className="my-10 lg:px-[16%] px-[6%] lg:flex justify-center md:grid md:grid-cols-2 sm:flex sm:flex-col sm:gap-4 lg:gap-3 items-center">
-        {bestSeller.map((b) => (
+        {bestSeller.map((b: BestCardProps) => (
           <ProductCard
             key={b.id}
             id={b.id}
@@ -37,6 +39,20 @@ const Products: React.FC = () => {
         ))}
       </div>
       <h1 className="bg-[#282828] text-white text-center text-[40px] p-4">Shop Now</h1>
+      <div className="my-10 px-[4%] lg:flex justify-center md:grid md:grid-cols-2 sm:flex sm:flex-col sm:gap-4 lg:gap-3 items-center">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            imageUrl={product.imageUrl}
+            title={product.title}
+            price={product.price}
+            addToCart={() => handleAddToCart(product)}
+            addToWishlist={() => handleAddToWishlist(product)}
+          />
+        ))}
+      </div>
+
       <div className="my-10 px-[4%] lg:flex justify-center md:grid md:grid-cols-2 sm:flex sm:flex-col sm:gap-4 lg:gap-3 items-center">
         {products.map((product) => (
           <ProductCard
