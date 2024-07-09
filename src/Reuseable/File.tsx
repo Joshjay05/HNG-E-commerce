@@ -8,7 +8,7 @@ interface ProductCardProps {
   onButtonClick: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ imageUrl, title, buttonText, onButtonClick }) => {
+const DressCard: React.FC<ProductCardProps> = ({ imageUrl, title, buttonText, onButtonClick }) => {
   return (
     <div className="relative overflow-hidden rounded-lg shadow-lg">
       <img 
@@ -29,4 +29,4 @@ const ProductCard: React.FC<ProductCardProps> = ({ imageUrl, title, buttonText, 
   );
 };
 
-export default ProductCard;
+export default DressCard;

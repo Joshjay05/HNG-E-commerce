@@ -34,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, imageUrl, title, price, s
           </div>
           <p className="mt-2 text-xl font-bold text-gray-900">${price.toLocaleString()}</p>
         </div>
-        <button onClick={handleAddToCart} className="mt-4 bg-yellow-500 text-white font-semibold border text-center p-[4px] rounded-xl bg-black ml-[70%] md:ml-[53%] lg:w-[6vw] sm:ml-[55%] sm:w-[50%]">
+        <button onClick={handleAddToCart} className="mt-4 bg-yellow-500 text-white font-semibold border text-center p-[4px] rounded-xl bg-black ml-[51%] md:ml-[53%] lg:w-[9vw] sm:ml-[55%] sm:w-[50%]">
           Add to Cart
         </button>
       </div>
