@@ -44,6 +44,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../constant/Store';
 import { removeFromCart } from '../constant/CartSlice';
+import { Link } from 'react-router-dom';
 
 const CheckoutPage: React.FC = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
@@ -54,10 +55,10 @@ const CheckoutPage: React.FC = () => {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold">Checkout</h1>
+    <div className="p-4 mt-[3rem] mb-[12rem]">
+      <h1 className="text-2xl font-bold pt-2 pb-20">Checkout</h1>
       {cart.map(product => (
-        <div key={`${product.id}-${product.size}`} className="flex justify-between items-center p-4 bg-gray-100 mb-2">
+        <div key={`${product.id}-${product.size}`} className="flex justify-between items-center p-4 bg-gray-100 mb-20">
           <img src={product.imageUrl} alt={product.title} className="w-20 h-20 object-cover" />
           <div className="flex-grow ml-4">
             <h3 className="font-semibold">{product.title}</h3>
@@ -68,8 +69,8 @@ const CheckoutPage: React.FC = () => {
           <button onClick={() => handleRemoveFromCart(product.id, product.size)} className="bg-red-500 text-white py-2 px-4 rounded">Remove</button>
         </div>
       ))}
-      <div className="mt-4">
-        <button className="bg-blue text-white py-2 px-4 rounded">Place Order</button>
+      <div className="mx-auto mt-10 flex justify-center items-center gap-[28rem]">
+        <button className="bg-blue text-white py-2 px-4 rounded">Place Order</button> <Link to='/' className="bg-blue text-white py-[15px] px-4 rounded">return to Home page</Link>
       </div>
     </div>
   );
