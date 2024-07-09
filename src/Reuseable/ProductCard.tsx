@@ -6,11 +6,11 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../constant/CartSlice';
 import { addToWishlist } from '../constant/WishSlice';
 
-const ProductCard: React.FC<ProductCardProps> = ({ id, imageUrl, title, price }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ id, imageUrl, title, price, size = 'M', quantity = 1 }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ id, imageUrl, title, price }));
+    dispatch(addToCart({ id, imageUrl, title, price, size, quantity }));
     console.log('Added to cart');
   };
 
