@@ -23,7 +23,7 @@ const Navbar = () => {
          
 <article className=" hidden lg:flex flex-row gap-20 items-center">
 <div>
-            <input placeholder="search" type="text" className="border-[1.5px] rounded-3xl w-[350px] h-[30px] p-2 bg-transparent border-white"/>
+            <input placeholder="search" type="text" className="border-[1.5px] text-white rounded-3xl w-[350px] h-[30px] p-2 bg-transparent border-white"/>
           </div>
             <ul className="flex justify-evenly items-center  gap-8 text-white text-[24px] cursor-pointer">
             <Link to='/'>
