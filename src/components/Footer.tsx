@@ -1,5 +1,6 @@
 import { BiCart } from "react-icons/bi"
 import logo from '../assets/MenWears.png'
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
@@ -9,9 +10,9 @@ const Footer = () => {
 <li className="bg-[#F5FF32] font-bold text-black border rounded-lg px-1 text-xl">
    Shop 
 </li>
-<li>Wishlist</li>
-<li className="flex gap-1 items-center">Cart <BiCart/></li>
-<li>Profile</li>
+<Link to='/wishlist' className="cursor-pointer" >Wishlist</Link>
+<Link to="/cart" className="flex gap-1 items-center cursor-pointer" >Cart <BiCart/></Link>
+<li >Profile</li>
             </ul>
             </div>
 
@@ -20,7 +21,10 @@ const Footer = () => {
 <p>Contact Us</p>
 
             </div>
+            <Link to='/' className="">
             <img src={logo} alt="logo cl" className="sm:w-[60%] mx-auto py-4 "/>
+{/* <img src={logo} alt="logo cl" className="sm:w-[50%]"/> */}
+</Link>
     </footer>
   )
 }
